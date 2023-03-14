@@ -1,0 +1,35 @@
+﻿@model IEnumerable<AdvancedDBAndORM_Assignment1.Models.ModelVM.SongVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+ 
+
+<h4>Album: @ViewBag.AlbumName</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>LibraryName</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlayListName)
+                </td>
+            <td>
+                    <a asp-action="Details" asp-route-id="@item.SongID">Add to playlist</a> 
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

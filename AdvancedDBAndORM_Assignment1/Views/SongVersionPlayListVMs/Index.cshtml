@@ -1,0 +1,60 @@
+﻿@model IEnumerable<AdvancedDBAndORM_Assignment1.Models.ModelVM.SongVersionPlayListVM>
+
+@{
+    ViewData["Title"] = "Index";
+}
+ 
+<h4><p>PlayListName: @ViewBag.PlayListName</p></h4>
+<p>TotalSecond: @ViewBag.TotalSec</p>
+<p>ItemNum: @ViewBag.ItemNum</p>
+<p>
+    <a href="Songs\Index">Song List</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.SongName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.ArtistName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.AlbumName)
+            </th>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.Duration)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+          
+            <td>
+                @Html.DisplayFor(modelItem => item.SongName)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.ArtistName)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.AlbumName)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.Duration)
+            </td>
+            <td>               
+                <a asp-action="Delete" asp-route-id="@item.SongVersionID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
