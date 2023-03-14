@@ -103,10 +103,17 @@ namespace AdvancedDBAndORM_Assignment1.Models
                 context.Songs.Add(song11);
                 await context.SaveChangesAsync();
 
-                context.SongVersions.Add(new SongVersion(song9.ID, artist3.ID, album3.ID, 230));
-                context.SongVersions.Add(new SongVersion(song10.ID, artist3.ID, album3.ID, 240));
-                context.SongVersions.Add(new SongVersion(song11.ID, artist3.ID, album3.ID, 250));
+                SongVersion songVersion1 = new SongVersion(song9.ID, artist3.ID, album3.ID, 230);
+                context.SongVersions.Add(songVersion1);
                 await context.SaveChangesAsync();
+                SongVersion songVersion2 = new SongVersion(song10.ID, artist3.ID, album3.ID, 240);
+                context.SongVersions.Add(songVersion2);
+                await context.SaveChangesAsync();
+                SongVersion songVersion3 = new SongVersion(song11.ID, artist3.ID, album3.ID, 250);
+                context.SongVersions.Add(songVersion3);
+                await context.SaveChangesAsync();
+
+               
 
                 Artist artist4 = new Artist("Emilia");
                 context.Artists.Add(artist4);
@@ -143,10 +150,16 @@ namespace AdvancedDBAndORM_Assignment1.Models
                 context.Songs.Add(song15);
                 await context.SaveChangesAsync();
 
-                context.SongVersions.Add(new SongVersion(song13.ID, artist5.ID, album5.ID, 230));
-                context.SongVersions.Add(new SongVersion(song14.ID, artist5.ID, album5.ID, 240));
-                context.SongVersions.Add(new SongVersion(song15.ID, artist5.ID, album5.ID, 250));
+                SongVersion songVersion4 = new SongVersion(song13.ID, artist5.ID, album5.ID, 230);
+                context.SongVersions.Add(songVersion4);
                 await context.SaveChangesAsync();
+                SongVersion songVersion5 = new SongVersion(song14.ID, artist5.ID, album5.ID, 240);
+                context.SongVersions.Add(songVersion5);
+                await context.SaveChangesAsync();
+                SongVersion songVersion6 = new SongVersion(song15.ID, artist5.ID, album5.ID, 250);
+                context.SongVersions.Add(songVersion6);
+                await context.SaveChangesAsync();
+ 
 
                 Album album6 = new Album("25");
                 context.Albums.Add(album6);
@@ -171,14 +184,17 @@ namespace AdvancedDBAndORM_Assignment1.Models
            
 
                 context.SongVersions.Add(new SongVersion(song16.ID, artist5.ID, album6.ID, 230));
-                context.SongVersions.Add(new SongVersion(song17.ID, artist5.ID, album6.ID, 240));
-                context.SongVersions.Add(new SongVersion(song18.ID, artist5.ID, album6.ID, 250));
+                context.SongVersions.Add(new SongVersion(song17.ID, artist5.ID, album6.ID, 240));           
                 await context.SaveChangesAsync();
-                SongVersion songVersion1 = new SongVersion(song19.ID, artist5.ID, album6.ID, 260);
-                context.SongVersions.Add(songVersion1);
+               
+                SongVersion songVersion7 = new SongVersion(song18.ID, artist5.ID, album6.ID, 230);
+                context.SongVersions.Add(songVersion7);
                 await context.SaveChangesAsync();
-                SongVersion songVersion2 = new SongVersion(song20.ID, artist5.ID, album6.ID, 270);
-                context.SongVersions.Add(songVersion2);
+                SongVersion songVersion8 = new SongVersion(song19.ID, artist5.ID, album6.ID, 240);
+                context.SongVersions.Add(songVersion8);
+                await context.SaveChangesAsync();
+                SongVersion songVersion9 = new SongVersion(song20.ID, artist5.ID, album6.ID, 250);
+                context.SongVersions.Add(songVersion9);
                 await context.SaveChangesAsync();
 
                 Library library= new Library("MySample1");
@@ -187,65 +203,30 @@ namespace AdvancedDBAndORM_Assignment1.Models
 
                 context.PlayLists.Add(new PlayList(library.ID, songVersion1.ID));
                 context.PlayLists.Add(new PlayList(library.ID, songVersion2.ID));
+                context.PlayLists.Add(new PlayList(library.ID, songVersion3.ID));
+                await context.SaveChangesAsync();
+
+                Library library2 = new Library("MySample2");
+                context.Librarys.Add(library2);
+                await context.SaveChangesAsync();
+
+                context.PlayLists.Add(new PlayList(library2.ID, songVersion4.ID));
+                context.PlayLists.Add(new PlayList(library2.ID, songVersion5.ID));
+                context.PlayLists.Add(new PlayList(library2.ID, songVersion6.ID));
+                await context.SaveChangesAsync();
+
+                Library library3 = new Library("MySample3");
+                context.Librarys.Add(library3);
+                await context.SaveChangesAsync();
+
+                context.PlayLists.Add(new PlayList(library3.ID, songVersion7.ID));
+                context.PlayLists.Add(new PlayList(library3.ID, songVersion8.ID));
+                context.PlayLists.Add(new PlayList(library3.ID, songVersion9.ID));
                 await context.SaveChangesAsync();
 
 
             }
-            //if (!context.Songs.Any())
-            //{
-            //    context.Songs.Add(new Song("Hero"));
-            //    context.Songs.Add(new Song("Ill Be There"));
-            //    context.Songs.Add(new Song("When You Believe"));
-            //    context.Songs.Add(new Song("My Heart Will Go On"));
-            //    context.Songs.Add(new Song("I Look to You"));
-            //    context.Songs.Add(new Song("One Moment in Time"));
-            //    context.Songs.Add(new Song("Without You"));
-            //    context.Songs.Add(new Song("How Will I Konw"));
-            //    context.Songs.Add(new Song("My Love Is Your Love"));
-            //    context.Songs.Add(new Song("We Are The World"));
-            //    context.Songs.Add(new Song("Billie Jean"));
-            //    context.Songs.Add(new Song("They Dont Care About Us"));
-            //    context.Songs.Add(new Song("Big Big World"));
-            //    context.Songs.Add(new Song("Halo"));
-            //    context.Songs.Add(new Song("Someone Like You"));
-            //    context.Songs.Add(new Song("Easy On Me"));
-            //    context.Songs.Add(new Song("Rolling In the Deep"));
-            //    context.Songs.Add(new Song("Hello"));
-            //    context.Songs.Add(new Song("When We Were Young"));
-            //    context.Songs.Add(new Song("Love In The Dark"));
-            //    context.Songs.Add(new Song("Someone"));
-            //    await context.SaveChangesAsync();
-            //}
-            //if (!context.Artists.Any())
-            //{
-            //    context.Artists.Add(new Artist("Mariah Carey"));
-            //    context.Artists.Add(new Artist("Walk Off the Earth"));
-            //    context.Artists.Add(new Artist("Whitney Houston"));
-            //    context.Artists.Add(new Artist("Celine Dion"));
-            //    context.Artists.Add(new Artist("U.S.A For Africa"));
-            //    context.Artists.Add(new Artist("Michael Jackson"));
-            //    context.Artists.Add(new Artist("Emilia"));
-            //    context.Artists.Add(new Artist("Adele"));
-            //    await context.SaveChangesAsync();
-            //}
-            //if (!context.Albums.Any())
-            //{
-            //    context.Albums.Add(new Album("Music Box"));
-            //    context.Albums.Add(new Album("My Love Is Your Love"));
-            //    context.Albums.Add(new Album("Lets Talk About Love"));
-            //    context.Albums.Add(new Album("I Look To You"));
-            //    context.Albums.Add(new Album("I Wanna Dance With Somebody"));
-            //    context.Albums.Add(new Album("Whitney Houston"));
-            //    context.Albums.Add(new Album("We Are The World"));
-            //    context.Albums.Add(new Album("History - Past"));
-            //    context.Albums.Add(new Album("Big Big World"));
-            //    context.Albums.Add(new Album("21"));
-            //    context.Albums.Add(new Album("Easy On Me"));
-            //    context.Albums.Add(new Album("25"));
-            //    context.Albums.Add(new Album("I will be there"));
-            //    await context.SaveChangesAsync();
-            //}
-            
+         
 
 
 
