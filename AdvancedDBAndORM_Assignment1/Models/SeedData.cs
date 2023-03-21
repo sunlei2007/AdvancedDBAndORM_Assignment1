@@ -226,8 +226,156 @@ namespace AdvancedDBAndORM_Assignment1.Models
 
 
             }
-         
 
+            if (!context.Podcasts.Any())
+            {
+
+                Artist artist1 = new Artist("PodcastArtist1");
+                context.Artists.Add(artist1);
+                await context.SaveChangesAsync();
+
+                Podcast podcast1 = new Podcast("Podcast1", artist1.ID);
+                context.Podcasts.Add(podcast1);
+                await context.SaveChangesAsync();
+
+                Episode ep1 = new Episode("Episode1", DateTime.Now,2500);
+                context.Episodes.Add(ep1);
+                await context.SaveChangesAsync();
+
+                Episode ep2 = new Episode("Episode2", DateTime.Now,2600);
+                context.Episodes.Add(ep2);
+                await context.SaveChangesAsync();
+
+                Episode ep3 = new Episode("Episode3", DateTime.Now,2700);
+                context.Episodes.Add(ep3);
+                await context.SaveChangesAsync();
+
+                PodcastEpisode podcastSong1 = new PodcastEpisode(podcast1.ID, ep1.ID);
+                context.PodcastEpisodes.Add(podcastSong1);
+                await context.SaveChangesAsync();
+                PodcastEpisode podcastSong2 = new PodcastEpisode(podcast1.ID, ep2.ID);
+                context.PodcastEpisodes.Add(podcastSong2);
+                await context.SaveChangesAsync();
+                PodcastEpisode podcastSong3 = new PodcastEpisode(podcast1.ID, ep3.ID);
+                context.PodcastEpisodes.Add(podcastSong3);
+                await context.SaveChangesAsync();
+
+
+                Artist artist2 = new Artist("PodcastArtist2");
+                context.Artists.Add(artist2);
+                await context.SaveChangesAsync();
+
+                Podcast podcast2 = new Podcast("Podcast2", artist2.ID);
+                context.Podcasts.Add(podcast2);
+                await context.SaveChangesAsync();
+
+                Episode ep4 = new Episode("Episode4", DateTime.Now,2800);
+                context.Episodes.Add(ep4);
+                await context.SaveChangesAsync();
+
+                Episode ep5 = new Episode("Episode5", DateTime.Now,2900);
+                context.Episodes.Add(ep5);
+                await context.SaveChangesAsync();
+
+                Episode ep6 = new Episode("Episode6", DateTime.Now,3000);
+                context.Episodes.Add(ep6);
+                await context.SaveChangesAsync();
+
+                PodcastEpisode podcastSong4 = new PodcastEpisode(podcast2.ID, ep4.ID);
+                context.PodcastEpisodes.Add(podcastSong4);
+                await context.SaveChangesAsync();
+                PodcastEpisode podcastSong5 = new PodcastEpisode(podcast2.ID, ep5.ID);
+                context.PodcastEpisodes.Add(podcastSong5);
+                await context.SaveChangesAsync();
+                PodcastEpisode podcastSong6 = new PodcastEpisode(podcast2.ID, ep6.ID);
+                context.PodcastEpisodes.Add(podcastSong6);
+                await context.SaveChangesAsync();
+
+                Artist artist3 = new Artist("PodcastArtist3");
+                context.Artists.Add(artist3);
+                await context.SaveChangesAsync();
+
+                Podcast podcast3 = new Podcast("Podcast3", artist3.ID);
+                context.Podcasts.Add(podcast3);
+                await context.SaveChangesAsync();
+
+                Episode ep7 = new Episode("Episode7", DateTime.Now,3100);
+                context.Episodes.Add(ep7);
+                await context.SaveChangesAsync();
+
+                Episode ep8 = new Episode("Episode8", DateTime.Now,3200);
+                context.Episodes.Add(ep8);
+                await context.SaveChangesAsync();
+
+                Episode ep9 = new Episode("Episode9", DateTime.Now,3300);
+                context.Episodes.Add(ep9);
+                await context.SaveChangesAsync();
+
+                PodcastEpisode podcastSong7 = new PodcastEpisode(podcast3.ID, ep7.ID);
+                context.PodcastEpisodes.Add(podcastSong7);
+                await context.SaveChangesAsync();
+                PodcastEpisode podcastSong8 = new PodcastEpisode(podcast3.ID, ep8.ID);
+                context.PodcastEpisodes.Add(podcastSong8);
+                await context.SaveChangesAsync();
+                PodcastEpisode podcastSong9 = new PodcastEpisode(podcast3.ID, ep9.ID);
+                context.PodcastEpisodes.Add(podcastSong9);
+                await context.SaveChangesAsync();
+
+
+                Artist artist4 = new Artist("PodcastArtist4");
+                context.Artists.Add(artist4);
+                await context.SaveChangesAsync();
+
+                Podcast podcast4 = new Podcast("Podcast4", artist4.ID);
+                context.Podcasts.Add(podcast4);
+                await context.SaveChangesAsync();
+
+                Episode ep10 = new Episode("Episode10", DateTime.Now,3400);
+                context.Episodes.Add(ep10);
+                await context.SaveChangesAsync();
+
+                Episode ep11 = new Episode("Episode11", DateTime.Now,3500);
+                context.Episodes.Add(ep11);
+                await context.SaveChangesAsync();
+
+                Episode ep12 = new Episode("Episode12", DateTime.Now,3600);
+                context.Episodes.Add(ep12);
+                await context.SaveChangesAsync();
+
+                PodcastEpisode podcastSong10 = new PodcastEpisode(podcast4.ID, ep10.ID);
+                context.PodcastEpisodes.Add(podcastSong10);
+                await context.SaveChangesAsync();
+                PodcastEpisode podcastSong11 = new PodcastEpisode(podcast4.ID, ep11.ID);
+                context.PodcastEpisodes.Add(podcastSong11);
+                await context.SaveChangesAsync();
+                PodcastEpisode podcastSong12 = new PodcastEpisode(podcast4.ID, ep12.ID);
+                context.PodcastEpisodes.Add(podcastSong12);
+                await context.SaveChangesAsync();
+
+                Listener l1 = new Listener("Listener1");
+                context.Listeners.Add(l1);
+                await context.SaveChangesAsync();
+
+                Listener l2 = new Listener("Listener2");
+                context.Listeners.Add(l2);
+                await context.SaveChangesAsync();
+
+                PodcastListener pl1 = new PodcastListener(podcast1.ID, l1.ID);
+                context.PodcastListeners.Add(pl1);
+                await context.SaveChangesAsync();
+
+                PodcastListener pl2 = new PodcastListener(podcast2.ID, l1.ID);
+                context.PodcastListeners.Add(pl2);
+                await context.SaveChangesAsync();
+
+                PodcastListener pl3 = new PodcastListener(podcast3.ID, l2.ID);
+                context.PodcastListeners.Add(pl3);
+                await context.SaveChangesAsync();
+
+                PodcastListener pl4 = new PodcastListener(podcast4.ID, l2.ID);
+                context.PodcastListeners.Add(pl4);
+                await context.SaveChangesAsync();
+            }
 
 
         }
